@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Circular Layout</title>
+</head>
+<body>
+  <div class="circle-container">
+    <h2><b>Welcome Young Scientist! <br> Are you ready to meet outstanding scientists?</b></h2>
+    <p id="Astronomy" class="circle4" style="background-image: url('img/H.jpeg');" onmouseover="handleHover('Astronomy', 'Astro.jpg', true)" onmouseout="handleHoverOut('Astronomy', 'H.jpeg', false)" onclick="navigateTo('https://www.youtube.com/watch?v=3cVfyurIFvM')"></p>
+    <p id="Medicine" class="circle2" style="background-image: url('img/H.jpeg');" onmouseover="handleHover('Medicine', 'M.jpg', true)" onmouseout="handleHoverOut('Medicine', 'H.jpeg', false)" onclick="navigateTo('https://www.youtube.com/watch?v=c8HlFFDTBWQ')"></p>
+    <p id="Chemistry" class="circle1" style="background-image: url('img/H.jpeg');" onmouseover="handleHover('Chemistry', 'Ch.jpg', true)" onmouseout="handleHoverOut('Chemistry', 'H.jpeg', false)" onclick="navigateTo('https://www.youtube.com/watch?v=uFAFZbrrCjA')"></p>
+    <p id="Mathematics" class="circle3" style="background-image: url('img/H.jpeg');" onmouseover="handleHover('Mathematics', 'Mathm.jpg', true)" onmouseout="handleHoverOut('Mathematics', 'H.jpeg', false)" onclick="navigateTo('https://www.youtube.com/watch?v=sAxWF_W6Q9w')"></p>
+    <p id="Engineering" class="circle5" style="background-image: url('img/H.jpeg');" onmouseover="handleHover('Engineering', 'Eng.jpg', true)" onmouseout="handleHoverOut('Engineering', 'H.jpeg', false)" onclick="navigateTo('https://www.youtube.com/watch?v=mYzPxwnGs34')"></p>
+    <p id="Optics" class="circle6" style="background-image: url('img/H.jpeg');" onmouseover="handleHover('Optics', 'O.jpg', true)" onmouseout="handleHoverOut('Optics', 'H.jpeg', false)" onclick="navigateTo('https://www.youtube.com/watch?v=faQmHzY29Zc')"></p>
+  </div>
+
+  <script>
+    function handleHover(circleId, imageName) {
+      const circle = document.getElementById(circleId);
+      circle.style.backgroundImage = `url('img/${imageName}')`;
+  
+      // Create a link element
+      const linkElement = document.createElement('a');
+      
+      // Set the link URL based on the circleId
+      switch (circleId) {
+        case 'Optics':
+          linkElement.href = 'https://www.youtube.com/watch?v=faQmHzY29Zc';
+          break;
+        case 'Chemistry':
+          linkElement.href = 'https://www.youtube.com/watch?v=uFAFZbrrCjA';
+          break;
+        case 'Mathematics':
+          linkElement.href = 'https://www.youtube.com/watch?v=sAxWF_W6Q9w';
+          break;
+        case 'Medicine':
+          linkElement.href = 'https://www.youtube.com/watch?v=c8HlFFDTBWQ';
+          break;
+        case 'Astronomy':
+          linkElement.href = 'https://www.youtube.com/watch?v=3cVfyurIFvM';
+          break;
+        case 'Engineering':
+          linkElement.href = 'https://www.youtube.com/watch?v=mYzPxwnGs34';
+          break;
+        default:
+          linkElement.href = 'https://www.google.com'; // Default link
+      }
+  
+      linkElement.target = '_blank'; // Open link in a new tab
+  
+      // Create a span element inside the link for the text
+      const textElement = document.createElement('span');
+      textElement.textContent = circleId;
+  
+      // Style the text to be bold black and larger
+      textElement.style.color = 'black';
+      textElement.style.fontWeight = 'bold';
+      textElement.style.fontSize = '16px'; // Adjust the font size as needed
+  
+      linkElement.appendChild(textElement);
+  
+      // Append the link to the circle
+      circle.appendChild(linkElement);
+    }
+  
+    function handleHoverOut(circleId, defaultImage) {
+      const circle = document.getElementById(circleId);
+      circle.style.backgroundImage = `url('img/${defaultImage}')`;
+  
+      // Remove all child elements (including the link)
+      while (circle.firstChild) {
+        circle.removeChild(circle.firstChild);
+      }
+    }
+  
+    function navigateTo(link) {
+      window.location.href = link;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f2f2f2; 
+  }
+
+  .circle-container {
+    position: relative;
+    text-align: center;
+  }
+  
+
+  h2 {
+      position: absolute;
+      border-radius: 50%;
+      background: url('img/head.jpg') center center no-repeat;
+      background-size: cover; /* Adjust this property to control how the image covers the background */
+      color:black (38, 247, 5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      padding: 50px;
+      width: 200px; /* Adjust the width as needed */
+      height: 200px;
+      transform: translate(-50%, -50%);
+      
+     }
+
+
+  
+
+
+  p {
+      position: absolute;
+      border-radius: 50%;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px;
+      height: 70px;
+      width: 70px; 
+    }
+
+
+
+
+
+.circle6{
+    background-size: cover; 
+    transform: translate(-50%, -50%) rotate(300deg) translate(250px) rotate(-300deg);
+}
+.circle2{
+    transform: translate(-50%, -50%) rotate(60deg) translate(250px) rotate(-60deg);
+    background-size: cover;
+    
+}
+
+
+.circle1{
+    background-size: cover; 
+    transform: translate(-50%, -50%) rotate(360deg) translate(250px) rotate(-360deg); 
+}
+
+.circle3{
+    background-size: cover; 
+    transform: translate(-50%, -50%) rotate(120deg) translate(250px) rotate(-120deg);
+}
+.circle5{
+    background-size: cover; 
+    transform: translate(-50%, -50%) rotate(240deg) translate(250px) rotate(-240deg);
+}
+
+.circle4 {
+   
+    background-size: cover;
+    transform: translate(-50%, -50%) rotate(180deg) translate(250px) rotate(-180deg);
+}
+
+
